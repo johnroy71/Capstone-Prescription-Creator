@@ -1,41 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState, useEffect } from "react"
+import React from "react"
+import Home from "./Home"
+import Nav from "./Nav"
+import Patients from "./Patients"
+import Physicians from "./Physicians"
+import Medications from "./Medications"
+import Prescriptions from "./Prescriptions"
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
-
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    fetch("/hello")
-    .then((r)=> r.json())
-    .then((data) => setCount(data.count));
-  }, []);
-
+  
   return (
-    <div className="App">
-      <h1>Page Count: {count}</h1>
-    </div>
-  );
 
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
-}
+    <div>
+    <Nav/>
+    <Routes >
+        <Route path="/" element={<Home/>}/>
+
+        <Route path="/patients" element={<Patients/>}/>
+        <Route path="/physicians" element={<Physicians/>}/>
+        <Route path="/medications" element={<Medications/>}/>
+        <Route path="/prescriptions" element={<Prescriptions/>}/>
+     </Routes >
+    </div>
+)}
 
 export default App;
