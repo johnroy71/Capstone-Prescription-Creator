@@ -11,7 +11,7 @@ function Medication({medication}) {
 
   return (
     
-    <div>
+    <div className="prescription_card">
         <u>Medication</u><p></p>
         <div>Medication ID: {medication.id}</div>
         <div>Medication Name: {medication.med_name}</div>

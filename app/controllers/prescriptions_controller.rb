@@ -20,11 +20,11 @@ class PrescriptionsController < ApplicationController
         render json: {}, status: :ok
     end
 
-    def update
-        prescription = Prescription.find(params[:id])
-        prescription.update!(prescription_params)
-        render json: prescription, status: :ok
-    end
+    # def update
+    #     prescription = Prescription.find(params[:id])
+    #     prescription.update!(prescription_params)
+    #     render json: prescription, status: :ok
+    # end
 
     private
 

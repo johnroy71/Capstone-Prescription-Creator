@@ -5,9 +5,9 @@ import axios from "axios"
 function Prescriptions() {
     
     const [prescriptionList, setPrescriptionList] = useState([])
-    const [patient, setPatient] = useState("")
-    const [physician, setPhysician] = useState("")
-    const [medication, setMedication] = useState("")
+    const [patient, setPatient] = useState()
+    const [physician, setPhysician] = useState()
+    const [medication, setMedication] = useState()
 
     useEffect(() => {
         fetch ('/prescriptions')
@@ -19,49 +19,49 @@ function Prescriptions() {
       const handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post('/Prescriptions', {
+        axios.post('/prescriptions', {
             patient_id: patient,
             physician_id: physician,
-            medications_id: medication
+            medication_id: medication
 
         })
         .then (res => setPrescriptionList([...prescriptionList,res.data]))
-    setPatient("")
-    setPhysician("")
-    setMedication("")
+    setPatient()
+    setPhysician()
+    setMedication()
 
     }
     
     return (
       
-      <div>
+      <div class="homepage">
           
-          Prescriptions
+          <h1>Prescriptions</h1>
 
           <p></p>
           Create a New Prescription With This Form: 
 
 <p></p>
 <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Prescription Name</label>
+        <label htmlFor="name">Patient Name</label>
         <input
-            type="text"
+            type="integer"
             id="name"
             autoComplete="off"
             value={patient}
             onChange = {(e) => setPatient(e.target.value)}/>
             
-         <label htmlFor="brand_name">Brand Name</label>   
+         <label htmlFor="brand_name">Physician Name</label>   
         <input
-            type="text"
+            type="integer"
             id="name"
             autoComplete="off"
             value={physician}
             onChange = {(e) => setPhysician(e.target.value)}/>
         
-        <label htmlFor="medication">medication</label> 
+        <label htmlFor="medication">Medication Name</label> 
         <input
-            type="text"
+            type="integer"
             id="name"
             autoComplete="off"
             value={medication}
@@ -71,10 +71,10 @@ function Prescriptions() {
         </button><p></p>
         
 </form>
-
+        <div className="card_container">
           {prescriptionList.map(prescription => <PrescriptionCard prescription={prescription} key = {prescription.id}/> )}
 
-      
+        </div>
       </div>
     );
   }

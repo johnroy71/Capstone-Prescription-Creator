@@ -23,7 +23,7 @@ function Patient({patient}) {
 
   return (
     
-    <div>
+    <div className="physician_card" >
         <p></p>
         <u>Patient</u>
         <p></p>
@@ -34,7 +34,7 @@ function Patient({patient}) {
         <div>Medications:<ul>
         {patient.medications.map(medication => <li>{medication.med_name}</li>)}</ul></div>
         <div>Care Providers:<ul>
-        {patient.physicians.map(physician => <li>Dr.{physician.phys_name}</li>)}</ul></div>
+        {patient.unique_physicians.map(physician => <li>Dr.{physician.phys_name}</li>)}</ul></div>
         <form onSubmit={handleSubmit}>
                 <label htmlFor="name"><u>Update Patient Name:</u></label><p></p>
                 <input

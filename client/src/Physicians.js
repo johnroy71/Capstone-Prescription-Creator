@@ -29,15 +29,15 @@ function Physicians() {
     return (
       
         
+<div>
 
-
-      <div>
+      <div class="homepage">
           
-          Physicians
+          <h1>Physicians</h1>
 
 
         <p></p>
-
+       
 Create a New Physician With This Form: 
 
 <p></p>
@@ -55,11 +55,11 @@ Create a New Physician With This Form:
         <button variant="fill" color="primary" type="submit">Create Physician
         </button>
         
-</form>
-
+</form> </div>
+<div className="card_container">
           {physicianList.map(physician => <PhysicianCard physician={physician} key = {physician.id}/> )}
 
-      
+      </div>
       </div>
     );
   }

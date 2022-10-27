@@ -1,26 +1,31 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom';
-function Nav() {
+
+function Nav({user, setUser}) {
+
+
+
     return (
-        <div>
-        <nav>
+        <div  >
+        <div class="navigation">
             <NavLink exact to="/">
-            Home
+            | Home |
             </NavLink>
             <NavLink exact to="/patients">
-                Patients
+             | Patients |
             </NavLink>
             <NavLink exact to="/physicians">
-                Physicians
+               | Physicians |
             </NavLink>
             <NavLink exact to="/medications">
-                Medications
+               | Medications |
             </NavLink>
             <NavLink exact to="/Prescriptions">
-                Prescriptions
+               | Prescriptions |
             </NavLink>
+
             
-        </nav>
+        </div>
         </div>
     )
 }

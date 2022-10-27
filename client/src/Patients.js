@@ -25,10 +25,10 @@ function Patients() {
       }
     
     return (
-      
       <div>
+      <div class="homepage">
           
-          Patients
+          <h1>Patients</h1>
 
           <p></p>
 
@@ -49,11 +49,12 @@ Create a New Patient With This Form:
       <button variant="fill" color="primary" type="submit">Create Patient
       </button>
       
-</form>
+</form></div>
+<div className="card_container">
 
           {patientList.map(patient => <PatientCard patient={patient} key = {patient.id}/> )}
 
-
+          </div>
       
       </div>
     );

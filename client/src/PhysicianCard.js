@@ -22,7 +22,7 @@ function Physician({physician}) {
         } 
   return (
     
-    <div>
+    <div className="physician_card">
         <p></p>
         <u>Physician</u>
         <p></p>
@@ -31,7 +31,7 @@ function Physician({physician}) {
         <div>Physician Name: Dr. {physician.phys_name}</div>
         <p></p>
         <div>Patient List:<ul>
-        {physician.patients.map(patient =><li>{patient.pt_name}</li>)}</ul></div>
+        {physician.patients.map(patient =><li>{patient.pt_name}</li>)}</ul></div><p></p>
         <form onSubmit={handleSubmit}>
                 <label htmlFor="name"><u>Update Physician Name:</u></label><p></p>
                 <input

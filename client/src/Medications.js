@@ -33,10 +33,10 @@ function Medications() {
     }
     
     return (
-      
-      <div>
+    
+      <div class="homepage">
           
-          Medications
+          <h1>Medications</h1>
 
           <p></p>
           Create a New Medication With This Form: 
@@ -71,10 +71,10 @@ function Medications() {
         </button><p></p>
         
 </form>
-
+<div className="card_container">
           {medicationList.map(medication => <MedicationCard medication={medication} key = {medication.id}/> )}
 
-      
+      </div>
       </div>
     );
   }
