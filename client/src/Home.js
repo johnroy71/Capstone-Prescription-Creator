@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-
+import house from "./images/house.jpg"
 
 function Home({user, setUser}) {
 
@@ -75,7 +75,7 @@ function Home({user, setUser}) {
           
           
         <h1>Shady Acres Retirement Home</h1> 
-        <img src="http://3.bp.blogspot.com/-Qxl8jrOEFaM/Tpmcuy5d51I/AAAAAAAAAR8/VHHdfNH-RvA/s1600/1974659199_4d115b0a6a_b.jpg" alt=""></img>
+        <img src={house} alt=""></img>
         <h3>Shady Acres is non-HIPAA compliant facility that would have genuine legal troubles using this application in a real-world environment, so this application is just for demonstration purposes.</h3> 
         <p></p>
         <p>If you do not have an account, you can sign up here. You must use a unique username!</p>

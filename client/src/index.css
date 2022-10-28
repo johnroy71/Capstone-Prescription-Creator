@@ -18,6 +18,11 @@ code {
   text-align: center;
 }
 
+.app {
+  background-color: lightblue;
+  font-family: Helvetica;
+}
+
 .card_container {
   display: flex;
   flex-wrap: wrap;
@@ -43,9 +48,11 @@ code {
 }
 
 .navigation {
+  font-size: 35px;
+  color: darkblue;
   justify-content: space-around;
   min-width: 500px;
   padding: 30px;
-  background-color: #dddddd;
+  background-color: lightblue;
 }
 
